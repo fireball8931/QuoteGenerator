@@ -1,0 +1,21 @@
+{
+  "name": "quotegenerator",
+  "version": "1.0.0",
+  "description": "Generate Quotes for Worksafe and others",
+  "main": "app.js",
+  "scripts": {
+    "test": "run app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitea.aolccbc.com/miken/QuoteGenerator.git"
+  },
+  "author": "Michael Ross",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "express": "^4.18.1",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.6.0"
+  }
+}

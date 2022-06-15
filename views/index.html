@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom.css">
+
+    <title>Quote Generator</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <header>
+        <div class="logo"><img src="/images/logo.png" alt="AOLCC Logo" /></div>
+        <h1>Academy of Learning Career College Official Quote for Training</h1>
+        <span id="issue-date"></span>
+    </header>  
+    <main>
+        <form onchange="convert()">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col-head">Tuition</td>
+                    <td><span class="data" id="tuition"></span><input type="number" step=0.01 name="tuition" id="tuitioninput" value="389"></td>
+                </tr>
+                <tr>
+                    <td class="col-head">Books</td>
+                    <td><span class="data" id="books"></span><input type="number" step=0.01 name="books" id="booksinput" value="40"></td>
+                </tr>
+                <tr>
+                    <td class="col-head">Registration and Administration Fees</td>
+                    <td><span class="data" id="fees"></span><input type="number" step=0.01 name="fees" id="feesinput" value="354"></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2"><i>Advanced Certificate or Diploma Only</i><br>
+                    <i>No Fees for Individual Courses</i></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    </main>
+      </div>
+    </div>
+<footer onclick="changeCampus()">
+    <span id="locationID" style="display:none;">1</span>
+    Quote Valid for 30 days - until <span id="expirydate"></span><br>
+    Academy of Learning Career College <span id="locationname"></span><br>
+    <span id="locationaddress-line1"></span>, <span id="locationaddress-city"></span>, BC,  <span id="locationaddress-postalcode"></span><br>
+    <span id="location-phone"></span> - <span id="location-fax"></span><br>
+    <span id="location-email"></span>
+</footer>
+
+<script src="/js/generatequote.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    let name = params.get("name");
+    if (name == undefined ){
+    name=0
+    }
+    updateFooter(name);
+    convert()
+    setEffectiveDate()
+</script>
+
+  </body>
+</html>

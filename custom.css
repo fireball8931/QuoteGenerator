@@ -1,0 +1,33 @@
+.logo img {
+    max-width: 300px;
+}
+
+.logo {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+.col-head {
+ font-weight: bold;
+ text-align: right;
+}
+
+footer {
+    text-align: center;
+}
+
+.data {
+    display: none;
+}
+@media print {
+ input {
+    display: none;
+}
+.data {
+    display: unset;
+    text-align: ".";
+}   
+}
