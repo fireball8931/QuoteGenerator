@@ -5,12 +5,12 @@ ENV NODE_ENV=production
 WORKDIR /app
 
 # Installing dependencies
-COPY package*.json .
-COPY package-lock.json* .
+COPY package*.json ./
+COPY package-lock.json* ./
 RUN npm install --production
 
 # Copying source files
-COPY . .
+COPY . ./
 
 # Running the app
 CMD [ "npm", "start" ]
