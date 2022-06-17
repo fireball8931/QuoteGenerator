@@ -13,22 +13,50 @@ const campusinfo =     [
         "fax": "604-855-3365"
         }
     ]
+const inputs = [
+    "print-button",
+    "tuitioninput",
+    "booksinput",
+    "feesinput",
+    "custom-issue-date",
+    "student-ref",
+    "sandhinput"
+
+]
+
+function changeInputs(action){
+    
+    inputs.forEach((input,i) => {
+        console.log(`${action} ${input}`);
+        document.getElementById(input).style.display = action
+        
+    }
+    )    
+    
+}
+
+
+
 
 function printPDF () {
     var pdf = new jsPDF('p', 'pt', 'letter');
     var width = 600;
     document.body.style.width = width + "px";
+    changeInputs("none")
 
     pdf.html(document.body, {
         callback: function (pdf) {
             var iframe = document.createElement('iframe');
-            iframe.setAttribute('style', 'position:absolute;top:0;right:0;height:100%; width:600px');
+            iframe.setAttribute('style', 'position:absolute;top:0;right:0;height:776px; width:600px');
             document.body.appendChild(iframe);
             iframe.src = pdf.output('datauristring');
+            pdf.deletePage("2")
+            pdf.save('quote.pdf')
         }
     });
-    pdf.fromHTML(document)
-    pdf.save('what.pdf')
+    
+    
+    //changeInputs("unset")
     }
 
 const quoteperiod = 30

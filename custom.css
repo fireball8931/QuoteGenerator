@@ -1,3 +1,10 @@
+
+body {
+    margin: 25px;
+    padding-right: 50px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .logo img {
     max-width: 300px;
 }
@@ -17,7 +24,7 @@ header {
 
 
 footer {
-    text-align: left;
+    text-align: center;
 }
 
 .cents {
@@ -37,9 +44,16 @@ footer {
 table {
     min-width: 100%;
 }
+
+.hidden {
+    display: none;
+}
+
+
 @media print {
 button, input {
     display: none;
 }
 
 }
+
